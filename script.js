@@ -5,14 +5,44 @@ let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
 // Products with realistic images
 let products = [
-  { name: "Sneakers", price: 300, img: "https://cdn.pixabay.com/photo/2016/03/27/19/48/sneakers-1284259_1280.jpg" },
-  { name: "Headphones", price: 120, img: "https://cdn.pixabay.com/photo/2016/11/29/05/08/headphones-1868612_1280.jpg" },
-  { name: "Watch", price: 200, img: "https://cdn.pixabay.com/photo/2017/03/27/13/41/wristwatch-2178583_1280.jpg" },
-  { name: "iPhone 14", price: 4500, img: "https://cdn.pixabay.com/photo/2022/01/28/16/54/iphone-6976787_1280.jpg" },
-  { name: "MacBook Pro", price: 12000, img: "https://cdn.pixabay.com/photo/2020/03/03/11/30/macbook-4895781_1280.jpg" },
-  { name: "Samsung Galaxy S23", price: 4200, img: "https://cdn.pixabay.com/photo/2023/03/15/18/53/galaxy-7847634_1280.jpg" },
-  { name: "Dell XPS Laptop", price: 9500, img: "https://cdn.pixabay.com/photo/2018/01/14/23/12/laptop-3087585_1280.jpg" }
+  {
+    name: "Sneakers",
+    price: 300,
+    img: "images/sneakers.jpg"
+  },
+  {
+    name: "Headphones",
+    price: 120,
+    img: "images/headphones.jpg"
+  },
+  {
+    name: "Watch",
+    price: 200,
+    img: "images/watch.jpg"
+  },
+  {
+    name: "iPhone 14",
+    price: 4500,
+    img: "images/iPhone.jpg"
+  },
+  {
+    name: "MacBook Pro",
+    price: 12000,
+    img: "images/macBookPro.jpg"
+  },
+  {
+    name: "Samsung Galaxy S23 Ultra",
+    price: 4200,
+    img: "images/phone.jpg"
+  },
+  {
+    name: "Dell XPS Laptop",
+    price: 9500,
+    img: "images/laptop.jpg"
+  }
+
 ];
+
 
 // LOGIN
 function login() {
