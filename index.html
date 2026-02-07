@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purchase Point - Online Shopping</title>
+
+<meta name="description" content="Purchase Point is your online store to buy sneakers, headphones, watches, phones, laptops and more online. Secure payments and fast checkout.">
+<meta name="keywords" content="Purchase Point, online store, sneakers, headphones, watch, laptops, phones, shopping, electronics, fashion">
+<meta name="author" content="Purchase Point">
+<meta name="robots" content="index, follow">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<!-- Social Sharing -->
+<meta property="og:title" content="Purchase Point - Online Shopping">
+<meta property="og:description" content="Buy sneakers, headphones, watches, phones, laptops and more at Purchase Point. Secure checkout and fast delivery!">
+<meta property="og:image" content="https://cdn.pixabay.com/photo/2016/03/27/19/48/sneakers-1284259_1280.jpg">
+<meta property="og:url" content="https://yourwebsite.com">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Structured Data for Store -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Purchase Point",
+  "url": "https://yourwebsite.com",
+  "image": [
+    "https://cdn.pixabay.com/photo/2016/03/27/19/48/sneakers-1284259_1280.jpg",
+    "https://cdn.pixabay.com/photo/2016/11/29/05/08/headphones-1868612_1280.jpg",
+    "https://cdn.pixabay.com/photo/2017/03/27/13/41/wristwatch-2178583_1280.jpg",
+    "https://cdn.pixabay.com/photo/2022/01/28/16/54/iphone-6976787_1280.jpg",
+    "https://cdn.pixabay.com/photo/2020/03/03/11/30/macbook-4895781_1280.jpg"
+  ],
+  "description": "Purchase Point is your online store to buy sneakers, headphones, watches, phones, laptops and more.",
+  "sameAs": [
+    "https://facebook.com/yourpage",
+    "https://twitter.com/yourhandle",
+    "https://instagram.com/yourhandle"
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🛒 Purchase Point</h1>
+  <button id="logoutBtn" onclick="logout()">Logout</button>
+</header>
+
+<!-- LOGIN / REGISTER -->
+<div id="loginBox" class="box">
+  <h2>Login</h2>
+  <input id="username" type="text" placeholder="Enter Username">
+  <input id="password" type="password" placeholder="Enter Password">
+  <button type="button" onclick="login()">Login</button>
+
+  <h3>Or Register</h3>
+  <input id="regUsername" type="text" placeholder="New Username">
+  <input id="regPassword" type="password" placeholder="New Password">
+  <button type="button" onclick="register()">Register</button>
+</div>
+
+<!-- SHOP -->
+<main id="shop" style="display:none">
+
+  <!-- SEARCH BAR -->
+  <input type="text" id="searchInput" placeholder="Search products..." oninput="searchProducts()" class="searchBox">
+
+  <section class="products" id="products"></section>
+
+  <section class="cart">
+    <h2>Cart</h2>
+    <ul id="cart"></ul>
+    <h3>Total: ₵<span id="total">0</span></h3>
+
+    <input id="momo" type="text" placeholder="MoMo Number">
+    <button onclick="pay()">Pay Now</button>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
