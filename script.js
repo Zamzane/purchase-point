@@ -125,10 +125,47 @@ function updateCart(){
 // SAVE CART
 function saveCart(){ localStorage.setItem("cart",JSON.stringify(cart)); }
 
-// PAYMENT
-function pay(){
-  let momo=document.getElementById("momo").value;
-  if(!/^\d{9,}$/.test(momo)){ alert("Enter valid MoMo number"); return; }
-  if(cart.length==0){ alert("Cart empty"); return; }
-  alert("Payment Successful!\n₵"+total); cart=[]; saveCart(); updateCart();
-}
+document.getElementById("payButton").addEventListener("click", function() {
+    let momoNumber = document.getElementById("momo").value;
+    
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    if (momoNumber.length < 9) {
+        alert("Enter a valid MoMo number!");
+        return;
+    }
+
+    // Use your Paystack public test key here
+    let handler = PaystackPop.setup({
+        key: "pk_live_20f22868f4c1953cfb20bac4149bbfc26b81ca9d", // replace with your Paystack public key
+        email: "customer@example.com", // can be dynamic or placeholder
+        amount: total * 100, // total in kobo
+        currency: "GHS",
+        ref: 'PP-' + Math.floor((Math.random() * 1000000000) + 1), // unique reference
+        metadata: {
+            custom_fields: [
+                {
+                    display_name: "Mobile Number",
+                    variable_name: "mobile_number",
+                    value: momoNumber
+                }
+            ]
+        },
+        callback: function(response) {
+            // Payment successful
+            alert("Payment successful! Reference: " + response.reference);
+            cart = [];
+            total = 0;
+            updateCart();
+        },
+        onClose: function() {
+            alert("Payment window closed.");
+        }
+    });
+
+    handler.openIframe();
+});
+

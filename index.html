@@ -75,13 +75,17 @@
   <section class="products" id="products"></section>
 
   <section class="cart">
-    <h2>Cart</h2>
-    <ul id="cart"></ul>
-    <h3>Total: ₵<span id="total">0</span></h3>
+  <h2>Cart</h2>
+  <ul id="cart"></ul>
+  <h3>Total: ₵<span id="total">0</span></h3>
 
-    <input id="momo" type="text" placeholder="MoMo Number">
-    <button onclick="pay()">Pay Now</button>
-  </section>
+  <input id="momo" placeholder="Enter your MoMo number">
+  <button type="button" id="payButton">Pay Now</button>
+</section>
+
+<!-- Include Paystack JS -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="script.js"></script>
 
 </main>
 
